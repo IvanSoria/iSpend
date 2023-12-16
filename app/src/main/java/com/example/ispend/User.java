@@ -1,6 +1,7 @@
 package com.example.ispend;
 
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -10,6 +11,7 @@ import com.example.ispend.DB.AppDatabase;
 public class User {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "userId")
     private int mUserId;
     private String mUsername;
     private String mPassword;

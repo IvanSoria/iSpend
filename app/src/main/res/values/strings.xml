@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">iSpend v1</string>
+    <string name="welcome">Welcome</string>
+    <string name="orders">Orders</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="please_sign_in">Please sign in</string>
+    <string name="cart">Cart</string>
+    <string name="products">Products</string>
+    <string name="logout">Sign Out?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="sign_off">Sign Off</string>
+    <string name="carts">Carts</string>
+    <string name="users">Users</string>
+    <string name="please_sign_up">Please sign up</string>
+    <string name="user">USER</string>
+</resources>

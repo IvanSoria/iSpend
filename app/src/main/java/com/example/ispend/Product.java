@@ -10,7 +10,7 @@ import com.example.ispend.DB.AppDatabase;
 @Entity(tableName = AppDatabase.PRODUCT_TABLE)
 public class Product {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "productId")
+    //@ColumnInfo(name = "productId")
     private int mProductId;
     private String mProductName;
     private String mProductDescription;

@@ -11,7 +11,7 @@ import com.example.ispend.DB.AppDatabase;
 public class User {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "userId")
+    //@ColumnInfo(name = "userId")
     private int mUserId;
     private String mUsername;
     private String mPassword;

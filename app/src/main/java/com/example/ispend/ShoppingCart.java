@@ -10,30 +10,53 @@ import com.example.ispend.DB.AppDatabase;
 import java.util.Date;
 
 
-@Entity(tableName = AppDatabase.SHOPPING_CART_TABLE,
+@Entity(tableName = AppDatabase.SHOPPING_CART_TABLE/*,
         foreignKeys = {
         @ForeignKey(entity = Product.class,
                 parentColumns = "productId",
                 childColumns = "productId",
-                onDelete = ForeignKey.CASCADE),
+                onDelete = ForeignKey.NO_ACTION),
         @ForeignKey(entity = User.class,
                 parentColumns = "userId",
                 childColumns = "userId",
-                onDelete = ForeignKey.CASCADE)
-        })
+                onDelete = ForeignKey.NO_ACTION)
+        }*/)
 public class ShoppingCart {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "cartId")
+    //@ColumnInfo(name = "cartId")
     private int mCartId;
-    @ColumnInfo(name = "productId")
+    //@ColumnInfo(name = "productId")
     private int mProductId;
-    @ColumnInfo(name = "userId")
+    //@ColumnInfo(name = "userId")
     private int mUserId;
     private Date mEffectiveDate;
+    private int mQuantity;
 
-    public ShoppingCart(Date mEffectiveDate) {
+    private double mTotalPrice;
+
+    public ShoppingCart(Date mEffectiveDate, int mProductId, int mUserId,
+                        int mQuantity) {
         this.mEffectiveDate = mEffectiveDate;
+        this.mProductId = mProductId;
+        this.mUserId = mUserId;
+        this.mQuantity = mQuantity;
 
+    }
+
+    public double getTotalPrice() {
+        return mTotalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        mTotalPrice = totalPrice;
+    }
+
+    public int getQuantity() {
+        return mQuantity;
+    }
+
+    public void setQuantity(int quantity) {
+        mQuantity = quantity;
     }
 
     public int getCartId() {

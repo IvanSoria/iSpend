@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             /*mCartButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = IntentFactory.newCartActivityIntent(MainActivity.this, mUserId);
+                    Intent intent = IntentFactory.newCartActivityIntent(MainActivity.this, mUserId  );
                     startActivity(intent);
                 }
             } );*/

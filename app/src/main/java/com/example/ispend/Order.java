@@ -9,18 +9,18 @@ import com.example.ispend.DB.AppDatabase;
 
 import java.util.Date;
 
-@Entity(tableName = AppDatabase.ORDER_TABLE,
+@Entity(tableName = AppDatabase.ORDER_TABLE/*,
     foreignKeys = {
                 @ForeignKey(entity = ShoppingCart.class,
                         parentColumns = "cartId",
                         childColumns = "cartId",
                         onDelete = ForeignKey.CASCADE)
-        })
+        }*/)
 public class Order {
 
       @PrimaryKey(autoGenerate = true)
       private int mOrderId;
-      @ColumnInfo(name = "cartId")
+      //@ColumnInfo(name = "cartId")
       private int mCartId;
       private Date mEffectiveDate;
 

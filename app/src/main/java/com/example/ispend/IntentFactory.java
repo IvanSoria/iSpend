@@ -54,16 +54,29 @@ public class IntentFactory {
         return intent;
     }
 
-    public static Intent newAddToCartActivity(Context context, int userId) {
+    public static Intent newAddToCartActivity(Context context, int userId, int productId, int quantity) {
         Intent intent = new Intent(context, AddToCartActivity.class);
         userId = intent.getIntExtra(MainActivity.getUserIdKey(), userId);
+
         intent.putExtra(MainActivity.getUserIdKey(), userId);
+        intent.putExtra("productId", productId);
+        intent.putExtra("quantity", quantity);
+
+
 
         return intent;
     }
 
     public static Intent newRemoveFromCartActivity(Context context, int userId) {
         Intent intent = new Intent(context, RemoveFromCartActivity.class);
+        userId = intent.getIntExtra(MainActivity.getUserIdKey(), userId);
+        intent.putExtra(MainActivity.getUserIdKey(), userId);
+
+        return intent;
+    }
+
+    public static Intent newCartActivityIntent(Context context, int userId) {
+        Intent intent = new Intent(context, CartActivity.class);
         userId = intent.getIntExtra(MainActivity.getUserIdKey(), userId);
         intent.putExtra(MainActivity.getUserIdKey(), userId);
 

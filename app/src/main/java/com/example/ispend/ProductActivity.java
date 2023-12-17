@@ -20,6 +20,9 @@ import java.util.List;
 
 public class ProductActivity extends AppCompatActivity {
 
+    private static final String PRODUCT_ID_KEY = "com.example.ispend.productIdKey";
+    private static final String PRODUCT_QUANTITY_KEY = "com.example.ispend.productQuantityKey";
+
     private RecyclerView recyclerView;
     private ProductAdapter adapter;
     private List<Product> productList;
@@ -34,6 +37,14 @@ public class ProductActivity extends AppCompatActivity {
     private Button mAddToCartButton;
     private Button mRemoveFromCartButton;
     private ConstraintLayout.LayoutParams layoutParams;
+
+    public static String getProductIdKey() {
+        return PRODUCT_ID_KEY;
+    }
+
+    public static String getProductQuantityKey() {
+        return PRODUCT_QUANTITY_KEY;
+    }
 
 
     @Override
@@ -83,7 +94,10 @@ public class ProductActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     //open add product activity
-                    Intent intent = IntentFactory.newAddToCartActivity(ProductActivity.this, getIntent().getIntExtra(MainActivity.getUserIdKey(), -1 ));
+                    Intent intent = IntentFactory.newAddToCartActivity(
+                            ProductActivity.this, getIntent().getIntExtra(MainActivity.getUserIdKey(), -1 ),
+                            getIntent().getIntExtra(ProductActivity.getProductIdKey(), -1),
+                            getIntent().getIntExtra(ProductActivity.getProductQuantityKey(), -1));
                     startActivity(intent);
                 }
             });

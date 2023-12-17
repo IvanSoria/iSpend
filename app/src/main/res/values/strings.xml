@@ -15,4 +15,10 @@
     <string name="users">Users</string>
     <string name="please_sign_up">Please sign up</string>
     <string name="user">USER</string>
+    <string name="product_name">Name:</string>
+    <string name="product_description">Description:</string>
+    <string name="product_quantity">QTY:</string>
+    <string name="add_product">Add Product</string>
+    <string name="price">Price: $</string>
+    <string name="delete_product">Delete Product</string>
 </resources>

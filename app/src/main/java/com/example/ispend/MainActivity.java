@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private Button mUsersButton;
     private ConstraintLayout.LayoutParams layoutParams;
     private iSpendDAO miSpendDAO;
-    private int mUserId = -1;
 
     private SharedPreferences mPreferences = null;
+    private int mUserId = -1;
     private User mUser;
 
 
@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         loginUser(mUserId);
 
         wireupDisplay();
+
+
     }
 
     private void wireupDisplay() {
@@ -90,13 +92,13 @@ public class MainActivity extends AppCompatActivity {
             layoutParams = (ConstraintLayout.LayoutParams) mProductsButton.getLayoutParams();
             layoutParams.topToBottom = mCartButton.getId();
             mProductsButton.setVisibility(Button.VISIBLE);
-            /*mProductsButton.setOnClickListener(new View.OnClickListener() {
+            mProductsButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = IntentFactory.newProductsActivityIntent(MainActivity.this, mUserId);
+                    Intent intent = IntentFactory.newProductActivityIntent(MainActivity.this , mUser.getUserId());
                     startActivity(intent);
                 }
-            } );*/
+            } );
 
             layoutParams = (ConstraintLayout.LayoutParams) mSignOffButton.getLayoutParams();
             layoutParams.topToBottom = mProductsButton.getId();
@@ -134,13 +136,13 @@ public class MainActivity extends AppCompatActivity {
             layoutParams = (ConstraintLayout.LayoutParams) mProductsButton.getLayoutParams();
             layoutParams.topToBottom = mCartsButton.getId();
             mProductsButton.setVisibility(Button.VISIBLE);
-            /*mProductsButton.setOnClickListener(new View.OnClickListener() {
+            mProductsButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = IntentFactory.newProductsActivityIntent(MainActivity.this, mUserId);
+                    Intent intent = IntentFactory.newProductActivityIntent(MainActivity.this, mUser.getUserId());
                     startActivity(intent);
                 }
-            } );*/
+            } );
 
             layoutParams = (ConstraintLayout.LayoutParams) mUsersButton.getLayoutParams();
             layoutParams.topToBottom = mProductsButton.getId();

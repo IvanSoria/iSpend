@@ -13,7 +13,7 @@ import com.example.ispend.Product;
 import com.example.ispend.ShoppingCart;
 import com.example.ispend.User;
 
-@Database(entities = {User.class, Order.class, Product.class, ShoppingCart.class}, version = 4)
+@Database(entities = {User.class, Order.class, Product.class, ShoppingCart.class}, version = 6)
 @TypeConverters(DateTypeConverter.class)
 public abstract class AppDatabase extends RoomDatabase{
     public static final String DB_NAME = "ISPEND_DATABASE";

@@ -23,8 +23,49 @@ public class IntentFactory {
         return intent;
     }
 
-    public static Intent newSignUpActivityIntent(Context applicationContext) {
-        Intent intent = new Intent(applicationContext, SignUpActivity.class);
+    public static Intent newSignUpActivityIntent(Context context) {
+        Intent intent = new Intent(context, SignUpActivity.class);
+
+        return intent;
+    }
+
+    public static Intent newProductActivityIntent(Context context, int userId) {
+        Intent intent = new Intent(context, ProductActivity.class);
+        userId = intent.getIntExtra(MainActivity.getUserIdKey(), userId);
+        intent.putExtra(MainActivity.getUserIdKey(), userId);
+
+        return intent;
+    }
+
+    public static Intent newAddProductActivity(Context context, int userId) {
+        Intent intent = new Intent(context, AddProductActivity.class);
+        userId = intent.getIntExtra(MainActivity.getUserIdKey(), userId);
+        intent.putExtra(MainActivity.getUserIdKey(), userId);
+
+        return intent;
+    }
+
+    public static Intent newDeleteProductActivity(Context context, int userId) {
+        Intent intent = new Intent(context, DeleteProductActivity.class);
+        userId = intent.getIntExtra(MainActivity.getUserIdKey(), userId);
+        intent.putExtra(MainActivity.getUserIdKey(), userId);
+
+
+        return intent;
+    }
+
+    public static Intent newAddToCartActivity(Context context, int userId) {
+        Intent intent = new Intent(context, AddToCartActivity.class);
+        userId = intent.getIntExtra(MainActivity.getUserIdKey(), userId);
+        intent.putExtra(MainActivity.getUserIdKey(), userId);
+
+        return intent;
+    }
+
+    public static Intent newRemoveFromCartActivity(Context context, int userId) {
+        Intent intent = new Intent(context, RemoveFromCartActivity.class);
+        userId = intent.getIntExtra(MainActivity.getUserIdKey(), userId);
+        intent.putExtra(MainActivity.getUserIdKey(), userId);
 
         return intent;
     }

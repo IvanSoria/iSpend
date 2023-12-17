@@ -15,12 +15,15 @@ public class Product {
     private String mProductName;
     private String mProductDescription;
     private double mProductPrice;
+    private int mProductQuantity;
 
-    public Product( String mProductName, String mProductDescription, double mProductPrice) {
+    public Product( String mProductName, String mProductDescription, double mProductPrice, int mProductQuantity) {
 
         this.mProductName = mProductName;
         this.mProductDescription = mProductDescription;
         this.mProductPrice = mProductPrice;
+        this.mProductQuantity = mProductQuantity;
+
     }
 
     public int getProductId() {
@@ -53,6 +56,14 @@ public class Product {
 
     public void setProductPrice(double productPrice) {
         mProductPrice = productPrice;
+    }
+
+    public int getProductQuantity() {
+        return mProductQuantity;
+    }
+
+    public void setProductQuantity(int productQuantity) {
+        mProductQuantity = productQuantity;
     }
 
     @Override

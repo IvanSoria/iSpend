@@ -23,6 +23,7 @@ import java.util.Date;
         })
 public class ShoppingCart {
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "cartId")
     private int mCartId;
     @ColumnInfo(name = "productId")
     private int mProductId;
